@@ -1,0 +1,13 @@
+#
+# ~/.mpv/config
+#
+
+# Start in fullscreen mode
+fullscreen
+
+# Turn on native font hinting
+ass-hinting=native
+
+# Save screenshots in PNG format
+screenshot-format=png
+
