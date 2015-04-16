@@ -1,0 +1,268 @@
+"""""""""""""""""""""""""""""""""""""
+""" ~/.vimrc :: Vim Settings File """
+"""""""""""""""""""""""""""""""""""""
+"
+" Last Updated: 2015-04-15 20:21
+"
+" This file:  ~/.vimrc
+" Vim folder: ~/.vim/
+"   Plugins:    ~/.vim/bundle/
+"   Themes:     ~/.vim/colors/
+"   Backup:     ~/.vim/backup/
+"   Temporary:  ~/.vim/tmp/
+"
+" Setup:
+" 1. Make sure fonts and themes are installed
+" 2. Create ~/.vim/ subdirectories
+" 3. Install NeoBundle
+" 4. Run vim!
+"
+
+""" NeoBundle Plugins {{{1
+
+"" Activate NeoBundle {{{2
+
+if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+"" }}}
+
+"" NeoBundle Plugins {{{2
+
+NeoBundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'Valloric/YouCompleteMe'
+
+" Specify revision/branch/tag
+" NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+
+"" }}}
+
+"" NeoBundle Settings {{{2
+
+call neobundle#end()
+
+" Prompt to install uninstalled bundles on startup
+NeoBundleCheck
+
+"" }}}
+
+""" }}}
+
+""" Meta {{{1
+
+" Make sure every file is encoded with UTF-8
+set encoding=utf-8
+set fileencoding=utf-8
+
+" Remove vi compatibility in all scenarios
+set nocompatible
+
+" Increase history and undo history size
+set history=1000
+set undolevels=1000
+
+" Change the default folding method to recognize fold markers
+set foldmethod=marker
+
+" Change the default working directory to the home folder
+cd ~/
+
+" Keep all backup and temporary directories in one place
+set backup
+set backupdir=~/.vim/backup
+set directory=~/.vim/tmp
+
+""" }}}
+
+""" Editing {{{1
+
+" Use the global clipboard (copy/paste text from outside of vim)
+set pastetoggle=<F2>
+set clipboard=unnamedplus
+
+" Enable mouse
+set mouse=a
+
+" Fix backspace key
+" set backspace=indent,eol,start
+set backspace=2
+
+""" }}}
+
+""" Formatting {{{1
+
+" Show tab bar
+set showtabline=2
+
+" Show only the file name in the tab bar
+set guitablabel=%t
+
+" Show status line
+set laststatus=2
+
+" Enable line numbers
+set number
+
+" Enable relative line numbers
+" set relativenumber
+
+" Set text width of the document
+" set textwidth=79
+
+" Disable automatic word-wrapping when loading a file
+set nowrap
+
+" Disable automatic word-wrapping when typing
+set fo-=t
+
+" Insert spaces using the tab key
+set expandtab
+
+" 'Tabs' are 4 spaces long
+set shiftwidth=4
+
+" 'Tabs' inserted in Visual Mode should be worth 4 spaces
+set tabstop=4
+
+" Delete 'tabs' all at once using the backspace key
+set softtabstop=4
+
+" Align indents
+set shiftround
+
+" Automatically indent 4 spaces after hitting the Enter key, when applicable
+set autoindent
+
+""" }}}
+
+""" Searching {{{1
+
+" Highlight search matches
+set hlsearch
+
+" Enable incremental search
+set incsearch
+
+" Case-insensitive searches
+set ignorecase
+
+" Case-sensitive searches with at least one uppercase letter
+set smartcase
+
+""" }}}
+
+""" Colors {{{1
+
+" Show trailing whitespace characters (default color: red)
+if has("autocmd")
+    autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+    autocmd InsertLeave * match ExtraWhitespace /\s\+$/    
+endif
+
+" Set Vim to favor dark themes or light themes
+set background=dark
+
+" Set theme
+if has("gui_running")
+    colorscheme bespin
+else
+    " Enable 256 color support when using Vim in terminals
+    set t_Co=256
+    
+    " Set terminal theme
+    colorscheme molokai
+    
+    " If the theme is solarized, use the 256-color theme
+    " let g:solarized_termcolors=256
+endif
+
+" Enable syntax highlighting
+filetype plugin indent on
+syntax on
+
+" Highlight the current line that the cursor is on
+set cursorline
+
+" Highlight the current column that the cursor is on
+" set cursorcolumn
+
+" Show a slightly darker column X characters in (default: 81)
+set colorcolumn=81
+
+" Change the default color of the color column
+highlight ColorColumn guibg=#302721
+" highlight Colorcolumn ctermbg=233
+
+""" }}}
+
+""" Hotkeys {{{1
+
+" Remap the <Leader> key
+let mapleader = ","
+
+"" Files {{{2
+
+" Use CTRL + s to save files
+" nnoremap <C-s> :update<CR>
+noremap  <C-s> :update<CR>
+vnoremap <C-s> <C-C>:update<CR>
+inoremap <C-s> <C-o>:update<CR>
+
+" Use CTRL + q to quit vim
+noremap  <C-q> :qa!<CR>
+vnoremap <C-q> <C-C>:qa!<CR>
+inoremap <C-q> <C-o>:qa!<CR>
+
+"" }}}
+
+"" Tabs {{{2
+
+" Use CTRL + t to open a new tab
+noremap  <C-t> :tabnew<CR>
+vnoremap <C-t> <C-C>:tabnew<CR>
+inoremap <C-t> <C-o>:tabnew<CR>
+
+" Use CTRL + w to close a tab
+noremap  <C-w> :tabclose!<CR>
+vnoremap <C-w> <C-C>:tabclose!<CR>
+inoremap <C-w> <C-o>:tabclose!<CR>
+
+" Use CTRL + TAB to move to the next tab
+noremap  <C-Tab> :tabnext<CR>
+vnoremap <C-Tab> <C-C>:tabnext<CR>
+inoremap <C-Tab> <C-o>:tabnext<CR>
+
+"" }}}
+
+"" Folds {{{2
+
+" Remap the space bar to toggle opening/closing folds in normal mode
+nnoremap <space> za
+
+"" }}}
+
+""" }}}
+
+""" gVim {{{1
+
+if has("gui_running")
+    " Maximize gVim window
+    set lines=500 columns=500
+
+    " Remove menu bar, tool bar and scroll bar
+    set guioptions-=m
+    set guioptions-=T
+    set guioptions-=r
+    
+    " Set font
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+endif
+
+""" }}}
+
