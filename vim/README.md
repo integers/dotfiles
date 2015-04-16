@@ -4,13 +4,13 @@
 
 ## Plugins
 
-I use (NeoBundle)[https://github.com/Shougo/neobundle.vim] to manage my plugins.
+I use [NeoBundle](https://github.com/Shougo/neobundle.vim) to manage my plugins.
 
 The plugins I have installed at the moment are:
 
-* (Powerline)[https://github.com/powerline/powerline] - for the nice status line
-* (ctrlp.vim)[https://github.com/kien/ctrlp.vim] - for fuzzy file opening
-* (YouCompleteMe)[https://github.com/Valloric/YouCompleteMe] - for code autocomplete
+* [Powerline](https://github.com/powerline/powerline) - for the nice status line
+* [ctrlp.vim](https://github.com/kien/ctrlp.vim) - for fuzzy file opening
+* [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) - for code autocomplete
 
 ## Colorscheme
 
