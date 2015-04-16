@@ -2,7 +2,7 @@
 """ ~/.vimrc :: Vim Settings File """
 """""""""""""""""""""""""""""""""""""
 "
-" Last Updated: 2015-04-15 20:21
+" Last Updated: 2015-04-15 19:37
 "
 " This file:  ~/.vimrc
 " Vim folder: ~/.vim/
@@ -162,7 +162,7 @@ set smartcase
 " Show trailing whitespace characters (default color: red)
 if has("autocmd")
     autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-    autocmd InsertLeave * match ExtraWhitespace /\s\+$/    
+    autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 endif
 
 " Set Vim to favor dark themes or light themes
@@ -174,10 +174,10 @@ if has("gui_running")
 else
     " Enable 256 color support when using Vim in terminals
     set t_Co=256
-    
+
     " Set terminal theme
-    colorscheme molokai
-    
+    colorscheme hybrid
+
     " If the theme is solarized, use the 256-color theme
     " let g:solarized_termcolors=256
 endif
@@ -254,12 +254,13 @@ nnoremap <space> za
 if has("gui_running")
     " Maximize gVim window
     set lines=500 columns=500
+    "set lines=40 columns=150
 
     " Remove menu bar, tool bar and scroll bar
     set guioptions-=m
     set guioptions-=T
     set guioptions-=r
-    
+
     " Set font
     set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 endif

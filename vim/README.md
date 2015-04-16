@@ -26,4 +26,4 @@ found [here](https://github.com/integers/dotfiles/blob/master/vim/vim/colors/bes
 
 The original colorscheme (converted from TextMate) can be found here: https://gist.github.com/acoffman/817896
 
-The colorscheme I use in Konsole is called [Molokai](https://github.com/tomasr/molokai).
+The colorscheme I use in Konsole is called [hybrid.vim](https://github.com/w0ng/vim-hybrid).
