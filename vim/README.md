@@ -2,6 +2,8 @@
 
 **Last Updated**: 2015-04-15
 
+![gVim Main Window](https://raw.githubusercontent.com/integers/dotfiles/master/vim-2015-04-15.png "gVim Main Window")
+
 ## Plugins
 
 I use [NeoBundle](https://github.com/Shougo/neobundle.vim) to manage my plugins.
