@@ -14,8 +14,8 @@ The plugins I have installed at the moment are:
 
 ## Colorscheme
 
-The colorscheme I use is called Bespin. Bespin was the codename of a former text
-editor by Mozilla Labs that was lastly known as [Mozilla Skywriter](https://en.wikipedia.org/wiki/Mozilla_Skywriter)
+The colorscheme I use in gVim is called Bespin. Bespin was the codename of a
+former text editor by Mozilla Labs that was lastly known as [Mozilla Skywriter](https://en.wikipedia.org/wiki/Mozilla_Skywriter)
 before being merged into another project. The colorscheme that was created for
 Bespin looked really good, so a user created a TextMate theme for it, that was
 converted to a vim colorscheme. I made a minor tweak to it (the background color
@@ -24,3 +24,4 @@ found [here](https://github.com/integers/dotfiles/blob/master/vim/vim/colors/bes
 
 The original colorscheme (converted from TextMate) can be found here: https://gist.github.com/acoffman/817896
 
+The colorscheme I use in Konsole is called [Molokai](https://github.com/tomasr/molokai).
