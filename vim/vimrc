@@ -243,6 +243,14 @@ noremap  <C-Tab> :tabnext<CR>
 vnoremap <C-Tab> <C-C>:tabnext<CR>
 inoremap <C-Tab> <C-o>:tabnext<CR>
 
+" Use CTRL + h and CTRL + l to move between tabs
+noremap  <C-l>     :tabnext<CR>
+noremap  <C-h>     :tabprevious<CR>
+vnoremap <C-l>     <C-C>:tabnext<CR>
+vnoremap <C-h>     <C-C>:tabprevious<CR>
+inoremap <C-l>     <C-o>:tabnext<CR>
+inoremap <C-h>     <C-o>:tabprevious<CR>
+
 "" }}}
 
 "" Folds {{{2
