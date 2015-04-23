@@ -63,9 +63,14 @@ set fileencoding=utf-8
 " Remove vi compatibility in all scenarios
 set nocompatible
 
+" Enable persistent undo
+set undodir=~/.vim/undo
+set undofile
+
 " Increase history and undo history size
 set history=1000
 set undolevels=1000
+set undoreload=10000
 
 " Change the default folding method to recognize fold markers
 set foldmethod=marker
