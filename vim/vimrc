@@ -2,8 +2,6 @@
 """ ~/.vimrc :: Vim Settings File """
 """""""""""""""""""""""""""""""""""""
 "
-" Last Updated: 2015-04-15 19:37
-"
 " This file:  ~/.vimrc
 " Vim folder: ~/.vim/
 "   Plugins:    ~/.vim/bundle/
