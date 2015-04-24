@@ -1,13 +1,25 @@
-#
-# ~/.mpv/config
-#
+##########################################
+### ~/.mpv/config :: mpv Settings File ###
+##########################################
+
+### [Video]
+
+# Video Output (VO) = OpenGL HQ, fallback to vanilla OpenGL, xv and x11
+vo=opengl-hq,opengl,xv,x11
 
 # Start in fullscreen mode
 fullscreen
 
-# Turn on native font hinting
-ass-hinting=native
-
-# Save screenshots in PNG format
+# Take PNG screenshots
 screenshot-format=png
+
+### [Audio]
+
+# Make the default volume louder
+softvol-max=500
+
+### [Subtitles]
+
+# Turn on font hinting
+ass-hinting=native
 
