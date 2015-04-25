@@ -9,6 +9,8 @@ This repo contains my dotfiles and other general configuration files.
 * Text Editor: [vim](http://www.vim.org/) [[Settings](https://github.com/integers/dotfiles/tree/master/vim)]
   * [Neovim](http://neovim.io/) seems promising. I'm also learning [GNU Emacs](https://gnu.org/software/emacs/) on the side.
 * Terminal Emulator: [Konsole](https://userbase.kde.org/Konsole)
+  * Shell: [Bash](https://gnu.org/software/bash/) [[Settings](https://github.com/integers/dotfiles/blob/master/bashrc)]
+    * Might try out [zsh](http://www.zsh.org/) eventually.
 * Media Player: [mpv](http://mpv.io/) [[Settings] (https://github.com/integers/dotfiles/tree/master/mpv)]
 * Desktop Environment: [Xfce](http://xfce.org/)
   * Compositor: [compton](https://github.com/chjj/compton) [[Settings](https://github.com/integers/dotfiles/tree/master/compton)], because xfwm's compositor results in quite a bit of screen tearing.
