@@ -88,11 +88,41 @@ alias pacnew2='locate -e --regex "\.pac(new|orig|save)$"'
 alias pacnewlog='grep -E "pac(new|orig|save)" /var/log/pacman.log | tail'
 
 ###
+### Command History
+###
+
+# Remove command history limit
+unset HISTSIZE
+
+# Remove ~/.bash_history line limit
+unset HISTFILESIZE
+
+# Remove duplicate commands and commands starting with a space
+HISTCONTROL=ignoreboth:erasedups
+
+# Append commands to ~/.bash_history instead of overwriting it
+shopt -s histappend
+
+# Store multi-line commands as a single command
+shopt -s cmdhist
+
+# Share history across all terminals
+PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
+#PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+###
 ### Misc.
 ###
 
 # Colorize directory contents a bit more
 eval $(dircolors -b)
+
+###
+### Environment Variables
+###
+
+export HISTCONTROL
+export PROMPT_COMMAND
 
 ###
 ### Fun
