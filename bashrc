@@ -106,6 +106,9 @@ shopt -s histappend
 # Store multi-line commands as a single command
 shopt -s cmdhist
 
+# Disable flow control to enable forward search history
+stty -ixon
+
 # Share history across all terminals
 PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 #PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
@@ -121,8 +124,14 @@ eval $(dircolors -b)
 ### Environment Variables
 ###
 
+# History
 export HISTCONTROL
 export PROMPT_COMMAND
+
+# $PATH
+## RubyGems
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+export PATH
 
 ###
 ### Fun
