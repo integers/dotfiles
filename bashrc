@@ -107,7 +107,7 @@ shopt -s histappend
 shopt -s cmdhist
 
 # Disable flow control to enable forward search history
-stty -ixon
+[[ $- == *i* ]] && stty -ixon
 
 # Share history across all terminals
 PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
