@@ -7,6 +7,9 @@
 # Video Output (VO) = OpenGL HQ, fallback to vanilla OpenGL, xv and x11
 vo=opengl-hq,opengl,xv,x11
 
+# Hardware Decoding
+hwdec=vaapi
+
 # Start in fullscreen mode
 fullscreen
 
