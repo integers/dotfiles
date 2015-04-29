@@ -1,6 +1,5 @@
 # dotfiles
 
-
 This repo contains my dotfiles and other general configuration files.
 
 ## GNU/Linux Setup
