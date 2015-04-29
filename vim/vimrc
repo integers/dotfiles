@@ -109,6 +109,9 @@ set guitablabel=%t
 " Show status line
 set laststatus=2
 
+" Don't show the editing mode twice if powerline is enabled
+autocmd VimEnter * if exists('g:powerline_loaded') | exe 'set noshowmode' | endif
+
 " Enable line numbers
 set number
 
