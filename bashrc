@@ -125,6 +125,8 @@ eval $(dircolors -b)
 ###
 
 # History
+export HISTSIZE
+export HISTFILESIZE
 export HISTCONTROL
 export PROMPT_COMMAND
 
