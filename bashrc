@@ -65,7 +65,7 @@ alias ..='cd ..'
 alias off='systemctl poweroff'
 #alias off='shutdown -P now' # Works without systemd; symlink to above command on Arch
 alias hdate='date "+%A, %B %d, %Y [%I:%M:%S %p]"'
-alias pingtest='ping -c 3 www.google.com'
+alias pingtest='ping -c 3 8.8.8.8'
 
 # Searching with grep
 alias dm='dmesg | grep'
