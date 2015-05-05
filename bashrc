@@ -10,6 +10,95 @@
 [[ $- != *i* ]] && return
 
 ###
+### Bash Options
+###
+
+##
+## Changing Directories
+##
+
+# Type directory names to cd into them
+shopt -s autocd
+
+# Change directories into variable names (with directory values)
+shopt -s cdable_vars
+
+# Autocorrect misspelled directory names when using cd
+shopt -s cdspell
+
+##
+## Command History
+##
+
+# Remove command history limit
+unset HISTSIZE
+export HISTSIZE
+
+# Remove ~/.bash_history line limit
+unset HISTFILESIZE
+export HISTFILESIZE
+
+# Remove duplicate commands and commands starting with a space
+export HISTCONTROL=ignoreboth:erasedups
+
+# Append commands to ~/.bash_history instead of overwriting it
+shopt -s histappend
+
+# Store multi-line commands as a single command
+shopt -s cmdhist
+
+# Disable flow control to enable forward search history
+[[ $- == *i* ]] && stty -ixon
+
+# Share history across all terminals
+export PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
+#PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+##
+## Modifications to $PATH
+##
+
+# RubyGems
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+
+# Export all modifications
+export PATH
+
+##
+## Colorization
+##
+
+# Colorize directory contents a bit more
+eval $(dircolors -b)
+
+##
+## Default Programs
+##
+
+export EDITOR=gvim
+export PAGER=less
+
+##
+## Misc. Options
+##
+
+# Check hashtable before running command, then check $PATH
+shopt -s checkhash
+
+# Update $LINES and $COLUMNS after each command (if altered)
+shopt -s checkwinsize
+
+# Get immediate notification if a background job was terminated
+set -o notify
+
+###
+### Prompt
+###
+
+# Default
+PS1='[\u@\H \W]\$ '
+
+###
 ### Aliases
 ###
 
@@ -61,11 +150,16 @@ alias cd..='cd ..'
 ## New commands
 ##
 
-alias ..='cd ..'
+#alias ..='cd ..' # Not necessary when autocd is enabled
 alias off='systemctl poweroff'
 #alias off='shutdown -P now' # Works without systemd; symlink to above command on Arch
 alias hdate='date "+%A, %B %d, %Y [%I:%M:%S %p]"'
-alias pingtest='ping -c 3 8.8.8.8'
+alias please='sudo `fc -n -l -1`'
+
+# Network Analysis
+alias pong='ping -c 3 8.8.8.8'
+alias pong2='ping -c 3 www.google.com'
+alias extip='echo "External IP Address:"; curl ifconfig.me'
 
 # Searching with grep
 alias dm='dmesg | grep'
@@ -88,56 +182,17 @@ alias pacnew2='locate -e --regex "\.pac(new|orig|save)$"'
 alias pacnewlog='grep -E "pac(new|orig|save)" /var/log/pacman.log | tail'
 
 ###
-### Command History
+### Functions
 ###
 
-# Remove command history limit
-unset HISTSIZE
-
-# Remove ~/.bash_history line limit
-unset HISTFILESIZE
-
-# Remove duplicate commands and commands starting with a space
-HISTCONTROL=ignoreboth:erasedups
-
-# Append commands to ~/.bash_history instead of overwriting it
-shopt -s histappend
-
-# Store multi-line commands as a single command
-shopt -s cmdhist
-
-# Disable flow control to enable forward search history
-[[ $- == *i* ]] && stty -ixon
-
-# Share history across all terminals
-PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
-#PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+# Home Screen (runs every time an interactive shell is opened)
+homescreen() {
+    fortune -a
+}
 
 ###
-### Misc.
+### Home Screen
 ###
 
-# Colorize directory contents a bit more
-eval $(dircolors -b)
-
-###
-### Environment Variables
-###
-
-# History
-export HISTSIZE
-export HISTFILESIZE
-export HISTCONTROL
-export PROMPT_COMMAND
-
-# $PATH
-## RubyGems
-PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
-export PATH
-
-###
-### Fun
-###
-
-fortune -a
+homescreen
 
