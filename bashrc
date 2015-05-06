@@ -95,8 +95,23 @@ set -o notify
 ### Prompt
 ###
 
+# Color variables
+NORMAL_TEXT=$(tput setaf 7)
+BLACK_TEXT=$(tput setaf 0)
+GREEN_TEXT=$(tput setaf 2)
+BLUE_TEXT=$(tput setaf 4)
+MAGENTA_TEXT=$(tput setaf 5)
+ORANGE_TEXT=$(tput setaf 9)
+PURPLE_TEXT=$(tput setaf 13)
+
 # Default
-PS1='[\u@\H \W]\$ '
+# PS1='[\u@\H \W]\$ '
+
+# Basic
+# PS1='\u@\H \w\$ '
+
+# Fancy
+PS1='${PURPLE_TEXT}\u${NORMAL_TEXT}@${PURPLE_TEXT}\H${NORMAL_TEXT} [${GREEN_TEXT}\w${NORMAL_TEXT}] ${BLUE_TEXT}➜${NORMAL_TEXT} '
 
 ###
 ### Aliases
