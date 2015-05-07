@@ -111,7 +111,7 @@ PURPLE_TEXT=$(tput setaf 13)
 # PS1='\u@\H \w\$ '
 
 # Fancy
-PS1='${PURPLE_TEXT}\u${NORMAL_TEXT}@${PURPLE_TEXT}\H${NORMAL_TEXT} [${GREEN_TEXT}\w${NORMAL_TEXT}] ${BLUE_TEXT}➜${NORMAL_TEXT} '
+PS1='\u@\H [${GREEN_TEXT}\w${NORMAL_TEXT}] ${BLUE_TEXT}➜${NORMAL_TEXT} '
 
 ###
 ### Aliases
