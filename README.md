@@ -12,7 +12,7 @@ This repo contains my dotfiles and other general configuration files.
   * Shell: [Bash](https://gnu.org/software/bash/) [[Settings](https://github.com/integers/dotfiles/blob/master/bashrc)]
     * Might try out [zsh](http://www.zsh.org/) eventually.
 * Media Player: [mpv](http://mpv.io/) [[Settings] (https://github.com/integers/dotfiles/tree/master/mpv)]
-* Display Manager: [SDDM](https://github.com/sddm)
+* Display Manager: [SDDM](https://github.com/sddm) [[Settings](https://github.com/integers/dotfiles/blob/master/sddm.conf)]
   * Theme: Maldives
 * Desktop Environment: [Xfce](http://xfce.org/)
   * Compositor: [compton](https://github.com/chjj/compton) [[Settings](https://github.com/integers/dotfiles/tree/master/compton)], because xfwm's compositor results in quite a bit of screen tearing.
