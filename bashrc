@@ -96,13 +96,14 @@ set -o notify
 ###
 
 # Color variables
-NORMAL_TEXT=$(tput setaf 7)
-BLACK_TEXT=$(tput setaf 0)
-GREEN_TEXT=$(tput setaf 2)
-BLUE_TEXT=$(tput setaf 4)
-MAGENTA_TEXT=$(tput setaf 5)
-ORANGE_TEXT=$(tput setaf 9)
-PURPLE_TEXT=$(tput setaf 13)
+normal=$(tput setaf 7)
+black=$(tput setaf 0)
+green=$(tput setaf 2)
+blue=$(tput setaf 4)
+magenta=$(tput setaf 5)
+orange=$(tput setaf 9)
+purple=$(tput setaf 13)
+reset=$(tput sgr0)
 
 # Default
 # PS1='[\u@\H \W]\$ '
@@ -111,7 +112,7 @@ PURPLE_TEXT=$(tput setaf 13)
 # PS1='\u@\H \w\$ '
 
 # Fancy
-PS1='\u@\H [${GREEN_TEXT}\w${NORMAL_TEXT}] ${BLUE_TEXT}➜${NORMAL_TEXT} '
+PS1='\u@\H [\[$green\]\w\[$reset\]] \[$blue\]➜\[$reset\] '
 
 ###
 ### Aliases
