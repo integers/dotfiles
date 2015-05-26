@@ -10,12 +10,19 @@
 ### Prompt
 ###
 
-NORMAL_TEXT=$(tput setaf 7)
-GREEN_TEXT=$(tput setaf 2)
-RED_TEXT=$(tput setaf 1)
-PURPLE_TEXT=$(tput setaf 13)
+# Color variables
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+reset=$(tput sgr0)
 
-PS1='${RED_TEXT}root${NORMAL_TEXT}@${PURPLE_TEXT}\H${NORMAL_TEXT} [${GREEN_TEXT}\w${NORMAL_TEXT}] ${RED_TEXT}#${NORMAL_TEXT} '
+# Default
+# PS1='[\u@\H \W]\$ '
+
+# Basic
+# PS1='\u@\H \w\$ '
+
+# Fancy
+PS1='\[$red\]\u\[$reset\]@\H [\[$green\]\w\[$reset\]] \[$red\]\$\[$reset\] '
 
 # Export Prompt
 export PS1

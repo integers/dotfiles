@@ -96,13 +96,8 @@ set -o notify
 ###
 
 # Color variables
-normal=$(tput setaf 7)
-black=$(tput setaf 0)
 green=$(tput setaf 2)
 blue=$(tput setaf 4)
-magenta=$(tput setaf 5)
-orange=$(tput setaf 9)
-purple=$(tput setaf 13)
 reset=$(tput sgr0)
 
 # Default
