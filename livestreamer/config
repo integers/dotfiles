@@ -1,0 +1,13 @@
+###################################################################
+### ~/.config/livestreamer/config :: Livestreamer Settings File ###
+###################################################################
+
+# Change the default video player to mpv and enable caching
+player=mpv --cache 8192
+
+# Don't close the player when the stream ends
+player-no-close
+
+# Always use the highest quality stream available
+default-stream=best
+
