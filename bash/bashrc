@@ -69,7 +69,7 @@ export PATH
 ##
 
 # Colorize directory contents a bit more
-eval $(dircolors -b)
+eval $(dircolors --bourne-shell)
 
 ##
 ## Default Programs
@@ -163,14 +163,16 @@ alias cd..='cd ..'
 
 #alias ..='cd ..' # Not necessary when autocd is enabled
 alias off='systemctl poweroff'
-#alias off='shutdown -P now' # Works without systemd; symlink to above command on Arch
+#alias off='shutdown --poweroff now' # Works without systemd; symlink to above command on Arch
 alias hdate='date "+%A, %B %d, %Y [%I:%M:%S %p]"'
 alias please='sudo `fc -n -l -1`'
 
 # Network Analysis
 alias pong='ping -c 3 8.8.8.8'
 alias pong2='ping -c 3 www.google.com'
-alias extip='echo "External IP Address:"; curl ifconfig.me'
+alias ip='ip -color -human-readable'
+alias intip='echo -n "Internal IP Address(es): "; hostname --ip-addresses'
+alias extip='echo -n "External IP Address: "; curl https://icanhazip.com/'
 
 # Searching with grep
 alias dm='dmesg | grep'
@@ -178,19 +180,19 @@ alias hist='history | grep'
 alias pss='ps -aux | grep'
 
 # pacman
-alias up='sudo pacman -Syu'
-alias upp='sudo pacman -Syyu'
-alias pacr='sudo pacman -Syy'
-alias pacc='sudo pacman -Sc'
-alias pacclean='sudo pacman -Scc'
-alias pacs='pacman -Ss'
-alias pacsl='pacman -Qs'
+alias up='sudo pacman --sync --refresh --sysupgrade'
+alias upp='sudo pacman --sync --refresh --refresh --sysupgrade'
+alias pacr='sudo pacman --sync --refresh --refresh'
+alias pacc='sudo pacman --sync --clean'
+alias pacclean='sudo pacman --sync --clean --clean'
+alias pacs='pacman --sync --search'
+alias pacsl='pacman --query --search'
 
 # pacman-related
-alias mirrorlist='sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist'
+alias mirrorlist='sudo reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist'
 alias pacnew='find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
-alias pacnew2='locate -e --regex "\.pac(new|orig|save)$"'
-alias pacnewlog='grep -E "pac(new|orig|save)" /var/log/pacman.log | tail'
+alias pacnew2='locate --existing --regex "\.pac(new|orig|save)$"'
+alias pacnewlog='grep --extended-regexp "pac(new|orig|save)" /var/log/pacman.log | tail'
 
 ###
 ### Functions
