@@ -190,9 +190,9 @@ alias pacsl='pacman --query --search'
 
 # pacman-related
 alias mirrorlist='sudo reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist'
-alias pacnew='find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
-alias pacnew2='locate --existing --regex "\.pac(new|orig|save)$"'
-alias pacnewlog='grep --extended-regexp "pac(new|orig|save)" /var/log/pacman.log | tail'
+alias pacnew='find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null'
+alias pacnew2='sudo updatedb && locate --existing --regex "\.pac(new|save)$"'
+alias pacnewlog='grep --extended-regexp "pac(new|save)" /var/log/pacman.log | tail'
 
 ###
 ### Functions
