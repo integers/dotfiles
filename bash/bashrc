@@ -198,7 +198,29 @@ alias pacnewlog='grep --extended-regexp "pac(new|orig|save)" /var/log/pacman.log
 ### Functions
 ###
 
-# Home Screen (runs every time an interactive shell is opened)
+##
+## Colorize man pages
+##
+#
+# References:
+# https://wiki.archlinux.org/index.php/Man_page#Colored_man_pages
+# https://linuxtidbits.wordpress.com/2009/03/23/less-colors-for-man-pages/
+# https://en.wikipedia.org/wiki/ANSI_escape_code
+#
+man() {
+    env LESS_TERMCAP_mb=$'\E[33m' \
+    LESS_TERMCAP_md=$'\E[1;31m' \
+    LESS_TERMCAP_me=$'\E[0m' \
+    LESS_TERMCAP_se=$'\E[0m' \
+    LESS_TERMCAP_so=$'\E[7m' \
+    LESS_TERMCAP_ue=$'\E[0m' \
+    LESS_TERMCAP_us=$'\E[1m' \
+    man "$@"
+}
+
+##
+## Home Screen (runs every time an interactive shell is opened)
+##
 homescreen() {
     fortune -a
 }
