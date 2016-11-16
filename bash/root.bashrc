@@ -1,5 +1,5 @@
 ################################################
-### /root/.bashrc :: Root Bash Settings File ###
+### Root Bash Settings File :: /root/.bashrc ###
 ################################################
 #
 # Reload this file:

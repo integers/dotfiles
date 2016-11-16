@@ -1,5 +1,5 @@
 ###################################################################
-### ~/.config/livestreamer/config :: Livestreamer Settings File ###
+### Livestreamer Settings File :: ~/.config/livestreamer/config ###
 ###################################################################
 
 # Change the default video player to mpv and enable caching
