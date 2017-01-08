@@ -150,12 +150,14 @@ alias cp='cp --verbose --interactive'
 alias ln='ln --verbose --interactive'
 alias rm='rm --verbose --interactive=once'
 # alias rm=' timeout 3 rm -Iv --one-file-system' # Even safer
+alias rmdir='rmdir --verbose'
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
 # Error tolerance
 alias sl='ls'
+alias ks='ls'
 alias cd..='cd ..'
 
 ##
