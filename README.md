@@ -12,8 +12,7 @@ This repo contains my dotfiles and other general configuration files.
   * Shell: [Bash](https://www.gnu.org/software/bash/) [[Settings](bash/bashrc)]
     * Might try out [zsh](https://www.zsh.org/) eventually.
 * Media Player: [mpv](https://mpv.io/) [[Settings](mpv/mpv.conf)]
-* Display Manager: [SDDM](https://github.com/sddm/sddm) [[Settings](SDDM/sddm.conf)]
-  * Theme: Breeze
+* Display Manager: [SDDM](https://github.com/sddm/sddm)
 * Desktop Environment: [Xfce](https://xfce.org/)
   * Compositor: [Steambox Compton](https://github.com/garnetius/compton) [[Settings](compton/compton.conf)], because other compositors (xfwm, NVIDIA, etc.) result in a lot more screen tearing.
   * GTK2/3 Theme: [Arc](https://github.com/horst3180/arc-theme)
