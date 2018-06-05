@@ -20,7 +20,7 @@ before being merged into another project. The colorscheme that was created for
 Bespin looked really good, so a user created a TextMate theme for it, that was
 converted to a vim colorscheme. I made a minor tweak to it (the background color
 of the line numbers on the left) and re-uploaded it on my repo, which can be
-found [here](https://github.com/integers/dotfiles/blob/master/vim/vim/colors/bespin.vim).
+found [here](https://gitlab.com/integers/dotfiles/blob/master/vim/vim/colors/bespin.vim).
 
 The original colorscheme (converted from TextMate) can be found here: https://gist.github.com/acoffman/817896
 
