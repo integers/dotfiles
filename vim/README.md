@@ -1,6 +1,6 @@
 # Vim Settings
 
-![gVim Main Window](https://raw.githubusercontent.com/integers/dotfiles/master/vim/screenshots/vim-2015-04-15.png "gVim Main Window")
+![gVim Main Window](https://gitlab.com/integers/dotfiles/raw/master/vim/screenshots/vim-2015-04-15.png "gVim Main Window")
 
 ## Plugins
 
